@@ -1,5 +1,6 @@
 import { BrowserWindow, app } from "electron";
 import { Main } from "..";
+import { MConsole } from "./Console/MConsole";
 
 class ElectronApplication{
     window: BrowserWindow;
@@ -28,7 +29,10 @@ class ElectronApplication{
             fullscreen: true,
             frame: false
         })
-        this.window.loadFile("<Server configuration html file>") // TODO Create server configuration html file
+        MConsole.log("Electron", "Creating window")
+        this.window.loadFile("<Server configuration html file>").catch((reason)=>{
+            MConsole.error("Electron", "Failed to load HTML file\n"+reason)
+        })
     }
 }
 

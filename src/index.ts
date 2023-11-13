@@ -7,6 +7,7 @@ class Main{
     constructor(){
         this.electronApplication = new ElectronApplication(this)
         this.websocketServer = new WebsocketServer(this)
+        this.websocketServer.start(8080)
     }
 }
 
