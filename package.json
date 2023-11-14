@@ -4,17 +4,23 @@
   "description": "This Electron Web application enable one to play Question Pour Un Champion at home with a dedicated Phone application for the game master see (Not created yet)",
   "main": "index.js",
   "scripts": {
-    "dev": "tsc --resolveJsonModule && electron dist/index.js",
-    "build": "tsc --resolveJsonModule",
+    "dev": "npm run build && npm run start",
+    "build": "rollup -c && tsc --resolveJsonModule",
     "start": "electron dist/index.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@material/web": "^1.0.1",
     "@types/node": "^20.9.0",
     "@types/websocket": "^1.0.9",
     "electron": "^27.0.4",
     "typescript": "^5.2.2",
     "websocket": "^1.0.34"
+  },
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@web/rollup-plugin-html": "^2.1.2",
+    "rollup": "^4.4.1"
   }
 }

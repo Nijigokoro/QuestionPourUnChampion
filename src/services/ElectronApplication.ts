@@ -30,7 +30,7 @@ class ElectronApplication{
             frame: false
         })
         MConsole.log("Electron", "Creating window")
-        this.window.loadFile("<Server configuration html file>").catch((reason)=>{
+        this.window.loadFile("web/index.html").catch((reason)=>{
             MConsole.error("Electron", "Failed to load HTML file\n"+reason)
         })
     }
